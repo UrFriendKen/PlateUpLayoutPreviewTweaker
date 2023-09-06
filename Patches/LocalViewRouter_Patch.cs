@@ -15,7 +15,7 @@ namespace KitchenLayoutPreviewTweaker.Patches
             {
                 RotationLock rotationLock = __result.AddComponent<RotationLock>();
                 rotationLock.PreferenceID = Main.LAYOUT_INFO_ROTATION_ID;
-                rotationLock.FixedRotation = Quaternion.Euler(0f, 43f, 0f);
+                rotationLock.RotationStartOffset = 43f;
 
                 Transform layoutContainer = __result.transform.Find("Container")?.Find("Body")?.Find("Layout Container");
                 if (layoutContainer != null)

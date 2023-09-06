@@ -8,7 +8,7 @@ namespace KitchenLayoutPreviewTweaker
 
         public Animator RotationAnimator;
 
-        public Quaternion FixedRotation;
+        public float RotationStartOffset;
 
         public string PreferenceID;
 
@@ -29,7 +29,7 @@ namespace KitchenLayoutPreviewTweaker
 
             if (shouldLock)
             {
-                LockedTransform.localRotation = FixedRotation;
+                LockedTransform.localRotation = Quaternion.Euler(0f, RotationStartOffset - Main.PrefManager.Get<float>(Main.LAYOUT_INFO_ROTATION_ANGLE_ID), 0f);
                 LockedTransform.localScale = Vector3.one;
             }
             else if (WasLocked)

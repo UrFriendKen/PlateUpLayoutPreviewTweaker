@@ -11,9 +11,10 @@ namespace KitchenLayoutPreviewTweaker
     {
         public const string MOD_GUID = $"IcedMilo.PlateUp.{MOD_NAME}";
         public const string MOD_NAME = "Layout Preview Tweaker";
-        public const string MOD_VERSION = "0.1.0";
+        public const string MOD_VERSION = "0.1.1";
 
         internal const string LAYOUT_INFO_ROTATION_ID = "layoutInfoRotation";
+        internal const string LAYOUT_INFO_ROTATION_ANGLE_ID = "layoutInfoRotationAngle";
 
         internal static PreferenceSystemManager PrefManager;
 
@@ -34,6 +35,12 @@ namespace KitchenLayoutPreviewTweaker
                     false,
                     new bool[] { false, true },
                     new string[] { "Disabled", "Enabled" })
+                .AddLabel("Fixed Angle")
+                .AddOption<float>(
+                    LAYOUT_INFO_ROTATION_ANGLE_ID,
+                    0,
+                    new float[] { 0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f },
+                    new string[] { "0 deg", "45 deg", "90 deg", "135 deg", "180 deg", "225 deg", "270 deg", "335 deg" })
                 .AddSpacer()
                 .AddSpacer();
 
